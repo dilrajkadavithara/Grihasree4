@@ -1,0 +1,53 @@
+{% extends 'services/base_dashboard.html' %}
+
+{% block title %}IT Head Dashboard{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6">Grihasree Dashboard – IT Head</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    {% comment %} Manage Leads Card {% endcomment %}
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">Manage Leads</h3>
+        <p class="text-sm text-gray-600 mb-4">View and manage all service requests submitted by users.</p>
+        <a href="{% url 'leads_view' %}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Go to Leads</a>
+    </div>
+
+    {% comment %} Manage Vendors Card {% endcomment %}
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">Manage Vendors</h3>
+        <p class="text-sm text-gray-600 mb-4">Add or update service providers like electricians and plumbers.</p>
+        <a href="{% url 'vendors_view' %}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Go to Vendors</a>
+    </div>
+
+    {% comment %} Manage Locations Card {% endcomment %}
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">Manage Locations</h3>
+        <p class="text-sm text-gray-600 mb-4">Define locality-specific service areas.</p>
+        <a href="{% url 'locations_view' %}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Go to Locations</a>
+    </div>
+
+    {% comment %} Manage Districts Card {% endcomment %}
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">Manage Districts</h3>
+        <p class="text-sm text-gray-600 mb-4">Add or update service districts to organize leads.</p>
+        <a href="{% url 'districts_view' %}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Go to Districts</a>
+    </div>
+
+    {% comment %} Manage Services Card {% endcomment %}
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">Manage Services</h3>
+        <p class="text-sm text-gray-600 mb-4">Create and manage the types of services your platform supports.</p>
+        <a href="{% url 'services_view' %}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Go to Services</a>
+    </div>
+
+    {% comment %} User Approvals Card {% endcomment %}
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">User Approvals</h3>
+        <p class="text-sm text-gray-600 mb-4">Approve new registrations and assign them roles (RM, Director, etc.).</p>
+        <a href="{% url 'pending_users' %}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Approve Users</a>
+    </div>
+
+</div>
+{% endblock %}

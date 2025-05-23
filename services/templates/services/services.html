@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services – Grihasree</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<div class="max-w-7xl mx-auto px-4 py-10">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">All Services</h1>
+    <a href="{% url 'create_service' %}" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+      + Add New Service
+    </a>
+  </div>
+
+  <div class="overflow-x-auto bg-white rounded-lg shadow">
+    <table class="min-w-full text-sm text-left border border-gray-200">
+      <thead class="bg-gray-100 text-gray-600">
+        <tr>
+          <th class="py-3 px-4">Service Name</th>
+          <th class="py-3 px-4">Slug</th>
+          <th class="py-3 px-4 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        {% for service in services %}
+        <tr class="hover:bg-gray-50">
+          <td class="py-3 px-4">{{ service.service_name }}</td>
+          <td class="py-3 px-4">{{ service.slug }}</td>
+          <td class="py-3 px-4 text-center space-x-2">
+            <a href="{% url 'edit_service' service.service_id %}" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm">
+              Edit
+            </a>
+            <form method="post" action="{% url 'delete_service' service.service_id %}" class="inline">
+              {% csrf_token %}
+              <button type="submit" onclick="return confirm('Delete this service?');"
+                class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">
+                Delete
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="3" class="text-center py-4 text-gray-500">No services available.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

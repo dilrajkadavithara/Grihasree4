@@ -1,0 +1,573 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grihasree – Trusted Home Care Services in Kerala</title>
+  <meta name="description" content="Grihasree offers professional electrical, plumbing, and other home services across Kerala. Book a trusted technician for your home needs.">
+
+  <!-- SEO: Canonical URL -->
+  <link rel="canonical" href="https://www.grihasree.com/">
+
+  <!-- Open Graph: Social Media Preview -->
+  <meta property="og:title" content="Grihasree – Home Care Services in Kerala" />
+  <meta property="og:description" content="Book expert electricians, plumbers and home maintenance pros anywhere in Kerala." />
+  <meta property="og:image" content="{% static 'services/images/grihasree-home-services-og-image.webp' %}" />
+  <meta property="og:url" content="https://www.grihasree.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card (optional) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Grihasree – Home Care Services in Kerala" />
+  <meta name="twitter:description" content="Book expert electricians, plumbers and home maintenance pros anywhere in Kerala." />
+  <meta name="twitter:image" content="{% static 'services/images/grihasree-home-services-og-image.webp' %}" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{% static 'services/css/custom.css' %}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Grihasree Home Care",
+  "telephone": "+916238804932",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sreemandiram Buildings, Udayamperoor P O",
+    "addressLocality": "Ernakulam",
+    "addressRegion": "Kerala",
+    "postalCode": "",
+    "addressCountry": "IN"
+  },
+  "url": "https://www.grihasree.com/",
+  "image": "https://www.grihasree.com/static/services/images/grihasree-home-services-og-image.webp",
+  "description": "Grihasree offers professional electrical, plumbing, and other home services across Kerala."
+}
+</script>
+</head>
+
+<body class="bg-white text-gray-900 antialiased font-sans">
+
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 ease-in-out bg-slate-900/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 md:h-20">
+      <!-- Logo -->
+      <a href="#home" aria-label="Grihasree Home Page" class="block py-2">
+        <img src="{% static 'services/images/logo2.webp' %}" alt="Grihasree Home Care Logo" class="h-9 sm:h-10 md:h-12 lg:h-16 w-auto object-contain">
+      </a>
+      <!-- Nav links (desktop) -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="#home"
+          class="text-white hover:text-indigo-300 focus:outline-none focus:ring-2 focus:ring-yellow-300 px-3 py-2 rounded-md transition-colors">Home</a>
+        <a href="#about"
+          class="text-white hover:text-indigo-300 focus:outline-none focus:ring-2 focus:ring-yellow-300 px-3 py-2 rounded-md transition-colors">About Us</a>
+        <a href="#services"
+          class="text-white hover:text-indigo-300 focus:outline-none focus:ring-2 focus:ring-yellow-300 px-3 py-2 rounded-md transition-colors">Services</a>
+        <a href="#contact"
+          class="text-white hover:text-indigo-300 focus:outline-none focus:ring-2 focus:ring-yellow-300 px-3 py-2 rounded-md transition-colors">Contact Us</a>
+      </div>
+      <!-- Phone Number (desktop only) -->
+      <a href="tel:6238804932"
+         class="hidden lg:inline-flex items-center ml-6 px-4 py-1 bg-green-600 text-white rounded-full font-bold text-base shadow-sm hover:bg-green-700 transition"
+         style="white-space:nowrap;">
+        📞 6238804932
+      </a>
+      <!-- Hamburger Button for Mobile -->
+      <button id="menu-btn"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-100 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-white lg:hidden"
+              aria-label="Open main menu"
+              aria-expanded="false"
+              type="button">
+        <!-- Hamburger Icon (open) -->
+        <svg id="menu-icon-open" class="block h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <!-- Close Icon (hidden by default) -->
+        <svg id="menu-icon-close" class="hidden h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Phone Number (mobile only, below navbar) -->
+    <div class="block lg:hidden w-full text-center mt-2">
+      <a href="tel:6238804932" 
+         class="inline-flex items-center justify-center px-4 py-1 bg-green-600 text-white rounded-full font-bold text-lg shadow hover:bg-green-700 transition"
+         style="white-space:nowrap;">
+        📞 6238804932
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile Menu: Hidden by default, toggled by hamburger -->
+  <div id="mobile-menu" class="lg:hidden hidden fixed top-16 inset-x-0 z-40 bg-slate-900/95 backdrop-blur-md py-7 px-4 shadow-xl">
+    <nav class="flex flex-col space-y-5 text-lg font-semibold">
+      <a href="#home" class="text-white hover:text-indigo-300 transition-colors">Home</a>
+      <a href="#about" class="text-white hover:text-indigo-300 transition-colors">About Us</a>
+      <a href="#services" class="text-white hover:text-indigo-300 transition-colors">Services</a>
+      <a href="#contact" class="text-white hover:text-indigo-300 transition-colors">Contact Us</a>
+    </nav>
+  </div>
+</nav>
+
+ <section id="home"
+    class="flex flex-col relative overflow-hidden
+           bg-[url('{% static 'services/images/bg-mobile2.webp' %}')] md:bg-[url('{% static 'services/images/bg2.webp' %}')]
+           bg-cover bg-center">
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-900/50 to-slate-900/70 md:from-blue-900/50 md:to-indigo-900/40"></div>
+
+  <div class="container mx-auto relative z-10 px-4 md:px-6 flex-grow flex items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center w-full py-20 lg:py-24">
+      <!-- TEXT BLOCK -->
+      <div class="text-white space-y-5 md:space-y-6 text-center lg:text-left pt-16 lg:pt-0 lg:col-span-2 lg:pl-16">
+        <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-2 drop-shadow-lg animate-fade-in">
+      Grihasree Home Care
+      </h1>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-200 text-shadow-custom-light leading-relaxed animate-fade-in" style="animation-delay: 0.2s;">
+          Trusted by families. Delivered with care.
+        </p>
+        <p class="text-base sm:text-lg lg:text-xl text-gray-300 text-shadow-custom-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          Your one-stop solution for Electrical Works, Plumbing, Carpentry, A/C Repair, Home Painting and more across Kerala!
+        </p>
+        <div class="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8 justify-center lg:justify-start">
+          <span class="bg-green-600/90 text-white py-2.5 px-5 rounded-full text-sm font-semibold shadow-md hover:bg-green-500 transition-colors">
+            ✔ 1500+ Homes Served
+          </span>
+          <span class="bg-yellow-400/90 text-gray-900 py-2.5 px-5 rounded-full text-sm font-semibold shadow-md hover:bg-yellow-300 transition-colors">
+            ★ 4.9 Google Rating
+          </span>
+        </div>
+      </div>
+
+      <!-- MOBILE FORM (visible below lg only, stacks below text) -->
+      <div class="flex lg:hidden justify-center items-center w-full mt-8">
+        <div class="form-box w-full max-w-md bg-white/90 backdrop-blur-xl p-10 rounded-3xl shadow-[0_10px_38px_0_rgba(42,65,130,0.15),0_2px_4px_rgba(42,65,130,0.06)] border border-indigo-300/60 ring-1 ring-indigo-50/50 animate-fade-in transition-all duration-500">
+
+          <h3 class="text-xl font-bold text-gray-800 mb-5 text-center">Get Your Free Callback</h3>
+          {{ mobile_form.media }}
+          <form method="POST">
+            {% csrf_token %}
+            <div class="space-y-3">
+              <div>
+                <label for="{{ mobile_form.lead_name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Full Name:</label>
+                {{ mobile_form.lead_name|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-600 text-base hover:border-gray-400 transition-colors"|attr:"placeholder:Your Full Name"|attr:"autocomplete:name" }}
+                {% if mobile_form.lead_name.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ mobile_form.lead_name.errors|first }}</p>{% endif %}
+              </div>
+              <div>
+                <label for="{{ mobile_form.phone_number.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Phone Number:</label>
+                {{ mobile_form.phone_number|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-600 text-base hover:border-gray-400 transition-colors"|attr:"placeholder:Phone Number (e.g., 98XXXXXX00)"|attr:"type:tel"|attr:"autocomplete:tel" }}
+                {% if mobile_form.phone_number.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ mobile_form.phone_number.errors|first }}</p>{% endif %}
+              </div>
+              <div>
+  <label for="mobile-district" class="block text-sm font-medium text-gray-700 mb-1">Select District:</label>
+  {{ mobile_form.district|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-base hover:border-gray-400 transition-colors"|attr:"id:mobile-district"|attr:"placeholder:Select District" }}
+  {% if mobile_form.district.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ mobile_form.district.errors|first }}</p>{% endif %}
+</div>
+<div>
+  <label for="mobile-location" class="block text-sm font-medium text-gray-700 mb-1">Select Local Area:</label>
+  {{ mobile_form.location|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-base hover:border-gray-400 transition-colors"|attr:"id:mobile-location"|attr:"placeholder:Your Location / Landmark" }}
+  {% if mobile_form.location.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ mobile_form.location.errors|first }}</p>{% endif %}
+</div>
+
+              <div>
+                <label for="{{ mobile_form.service.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Type of Service Required:</label>
+                {{ mobile_form.service|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-base hover:border-gray-400 transition-colors"|attr:"placeholder:Service Needed (e.g., Plumbing)" }}
+                {% if mobile_form.service.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ mobile_form.service.errors|first }}</p>{% endif %}
+              </div>
+<button type="submit" name="mobile-submit"
+  class="w-full flex items-center justify-center gap-2
+         bg-gradient-to-r from-indigo-700 via-blue-700 to-indigo-700
+         text-white py-4 px-6 rounded-2xl font-extrabold text-lg shadow-xl
+         hover:from-indigo-800 hover:via-blue-800 hover:to-indigo-800 hover:scale-105 active:scale-95 transition-all duration-300
+         focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 tracking-wide group"
+  aria-label="Submit callback request">
+  Request a Callback
+  <span class="inline-block transition-all duration-300 group-hover:translate-x-1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  </span>
+</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+<!-- DESKTOP FORM (visible on lg+, right side of hero grid) -->
+<div class="hidden lg:flex lg:justify-end lg:items-center lg:h-full lg:col-span-3">
+  <div class="form-box w-full max-w-md bg-white/90 backdrop-blur-xl p-10 rounded-3xl shadow-[0_10px_38px_0_rgba(42,65,130,0.15),0_2px_4px_rgba(42,65,130,0.06)] border border-indigo-300/60 ring-1 ring-indigo-50/50 animate-fade-in transition-all duration-500">
+
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Get Your Free Callback</h3>
+    {{ form.media }}
+    <form method="POST">
+      {% csrf_token %}
+      <div class="space-y-3">
+        <div>
+          <label for="{{ form.lead_name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Full Name:</label>
+          {{ form.lead_name|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-600 text-base sm:text-sm hover:border-gray-400 transition-colors"|attr:"placeholder:Your Full Name"|attr:"autocomplete:name" }}
+          {% if form.lead_name.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ form.lead_name.errors|first }}</p>{% endif %}
+        </div>
+        <div>
+          <label for="{{ form.phone_number.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Phone Number:</label>
+          {{ form.phone_number|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-600 text-base sm:text-sm hover:border-gray-400 transition-colors"|attr:"placeholder:Phone Number (e.g., 98XXXXXX00)"|attr:"type:tel"|attr:"autocomplete:tel" }}
+          {% if form.phone_number.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ form.phone_number.errors|first }}</p>{% endif %}
+        </div>
+        <div>
+          <label for="desktop-district" class="block text-sm font-medium text-gray-700 mb-1">Select District:</label>
+          {{ form.district|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-base sm:text-sm hover:border-gray-400 transition-colors"|attr:"id:desktop-district"|attr:"placeholder:Select District" }}
+          {% if form.district.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ form.district.errors|first }}</p>{% endif %}
+        </div>
+        <div>
+          <label for="desktop-location" class="block text-sm font-medium text-gray-700 mb-1">Select Local Area:</label>
+          {{ form.location|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-base sm:text-sm hover:border-gray-400 transition-colors"|attr:"id:desktop-location"|attr:"placeholder:Your Location / Landmark" }}
+          {% if form.location.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ form.location.errors|first }}</p>{% endif %}
+        </div>
+        <div>
+          <label for="{{ form.service.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Type of Service Required:</label>
+          {{ form.service|add_class:"block w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-base sm:text-sm hover:border-gray-400 transition-colors"|attr:"placeholder:Service Needed (e.g., Plumbing)" }}
+          {% if form.service.errors %}<p class="text-red-500 text-xs mt-1" role="alert">{{ form.service.errors|first }}</p>{% endif %}
+        </div>
+        <!-- BUTTON INSIDE space-y-3 -->
+      <button type="submit" name="desktop-submit"
+  class="w-full flex items-center justify-center gap-2
+         bg-gradient-to-r from-indigo-700 via-blue-700 to-indigo-700
+         text-white py-4 px-6 rounded-2xl font-extrabold text-lg shadow-xl
+         hover:from-indigo-800 hover:via-blue-800 hover:to-indigo-800 hover:scale-105 active:scale-95 transition-all duration-300
+         focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 tracking-wide group"
+  aria-label="Submit callback request">
+  Request a Callback
+  <span class="inline-block transition-all duration-300 group-hover:translate-x-1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  </span>
+</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="about" class="bg-white py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:justify-between lg:gap-16">
+    <!-- Left: About Text -->
+    <div class="lg:w-6/12">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-6 md:mb-8 leading-tight">
+        Who We Are
+      </h2>
+      <div class="text-gray-700 space-y-5 text-base md:text-lg leading-relaxed">
+        <p>
+          <strong class="font-semibold text-blue-700">Grihasree</strong> is your trusted partner for
+          comprehensive home care solutions, delivering professional expertise for every corner
+          of your living space. What began as specialized electrical and plumbing services has
+          evolved into <strong class="font-semibold text-blue-700">Kerala's premier home maintenance provider</strong>,
+          offering complete solutions including carpentry, painting, A/C servicing, and more under one trusted name.
+        </p>
+        <p>
+          Our commitment to <strong class="font-semibold text-green-700">excellence</strong>,
+          <strong class="font-semibold text-green-700">safety</strong>, and
+          <strong class="font-semibold text-green-700">customer satisfaction</strong> has helped us earn the trust of over
+          <strong class="font-semibold text-green-600">1,500+ delighted homeowners</strong> across Kerala.
+        </p>
+        <p>
+          We understand that your home is your sanctuary, and it deserves nothing but the finest care and attention.
+        </p>
+        <p>
+          At <strong class="font-semibold text-blue-700">Grihasree</strong>, we don't just fix problems—
+          <em class="italic text-gray-900">we provide peace of mind</em>. Experience the difference
+          of working with Kerala's most trusted home care experts, where every service call is answered
+          with the same dedication as if we were caring for our own homes.
+        </p>
+      </div>
+      <!-- NEW BADGES ADDED BELOW -->
+      <div class="flex flex-wrap gap-3 mt-7 animate-fade-in" style="animation-delay:.2s">
+        <span class="bg-indigo-100 text-indigo-700 py-2 px-6 rounded-full text-xs font-bold shadow-sm">
+          Quick Response Team
+        </span>
+        <span class="bg-gray-100 text-gray-700 py-2 px-6 rounded-full text-xs font-bold shadow-sm">
+          No Hidden Charges
+        </span>
+      </div>
+    </div>
+    <!-- Right: About Image -->
+    <div class="lg:w-5/12 mt-10 lg:mt-0 flex justify-center">
+      <img
+        src="{% static 'services/images/about.webp' %}"
+        alt="Team of Grihasree home service professionals providing on-site support to a client"
+        class="rounded-xl shadow-2xl border border-gray-200 w-full max-w-md lg:max-w-lg object-cover"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</section>
+
+
+<section id="services" class="bg-gray-50 py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-12 md:mb-16">
+      Our Services
+    </h2>
+    <div class="grid gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col items-start h-full group">
+        <img src="{% static 'services/images/plumbing_services.webp' %}"
+             alt="Professional plumbing services illustration"
+             class="rounded-lg mb-5 h-52 w-full object-cover bg-gray-100 group-hover:opacity-90 transition-opacity duration-300">
+        <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Plumbing</h3>
+        <p class="text-gray-600 text-sm lg:text-base flex-grow">Efficient and reliable plumbing solutions for leak repairs, installations, and maintenance.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col items-start h-full group">
+        <img src="{% static 'services/images/electrical_works.webp' %}"
+             alt="Safe electrical wiring and repair services"
+             class="rounded-lg mb-5 h-52 w-full object-cover bg-gray-100 group-hover:opacity-90 transition-opacity duration-300">
+        <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Electrical Works</h3>
+        <p class="text-gray-600 text-sm lg:text-base flex-grow">Safe and professional electrical services for wiring, installations, and repairs.</p>
+      </div>
+
+       <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col items-start h-full group">
+        <img src="{% static 'services/images/ac_servicing.webp' %}"
+             alt="Air conditioner servicing and maintenance"
+             class="rounded-lg mb-5 h-52 w-full object-cover bg-gray-100 group-hover:opacity-90 transition-opacity duration-300">
+        <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">A/C Servicing</h3>
+        <p class="text-gray-600 text-sm lg:text-base flex-grow">Full-scale A/C servicing for optimal cooling, cleaning, and efficiency.</p>
+      </div>
+
+       <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col items-start h-full group">
+        <img src="{% static 'services/images/home_painting.webp' %}"
+             alt="Interior and exterior home painting services"
+             class="rounded-lg mb-5 h-52 w-full object-cover bg-gray-100 group-hover:opacity-90 transition-opacity duration-300">
+        <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Home Painting</h3>
+        <p class="text-gray-600 text-sm lg:text-base flex-grow">High-quality interior and exterior painting services to transform your living spaces.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col items-start h-full group">
+        <img src="{% static 'services/images/carpentry_services.webp' %}"
+             alt="Custom carpentry and furniture repair"
+             class="rounded-lg mb-5 h-52 w-full object-cover bg-gray-100 group-hover:opacity-90 transition-opacity duration-300">
+        <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Carpentry</h3>
+        <p class="text-gray-600 text-sm lg:text-base flex-grow">Custom carpentry solutions for your home, including furniture, repairs, and installations.</p>
+      </div>
+
+       <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1.5 transition-all duration-300 p-6 flex flex-col items-start h-full group">
+        <img src="{% static 'services/images/solar_installation_services.webp' %}"
+             alt="Solar panel installation and servicing"
+             class="rounded-lg mb-5 h-52 w-full object-cover bg-gray-100 group-hover:opacity-90 transition-opacity duration-300">
+        <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">Solar Installations & Servicing</h3>
+        <p class="text-gray-600 text-sm lg:text-base flex-grow">Sustainable energy solutions with expert solar panel installations and comprehensive servicing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer id="contact" class="bg-slate-900 text-slate-200 py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+    <div class="w-full text-center md:text-left">
+      <h3 class="text-3xl font-extrabold mb-6 text-white">Contact Us</h3>
+      <p class="font-semibold text-xl text-indigo-300 mb-2">Grihasree Home Care Solutions</p>
+      <address class="text-slate-300 not-italic mb-6 leading-relaxed">
+        Sreemandiram Buildings,<br>
+        Udayamperoor P O, Ernakulam, Kerala
+      </address>
+      <div class="space-y-4 inline-flex flex-col items-center md:items-start">
+        <a href="tel:6238804932" class="flex items-center gap-3 text-lg hover:text-indigo-300 transition-colors duration-200 group">
+          <span class="text-pink-500 text-2xl group-hover:scale-110 transition-transform">📞</span>
+          <span>6238804932</span>
+        </a>
+        <a href="mailto:info@grihasree.com" class="flex items-center gap-3 text-lg hover:text-indigo-300 transition-colors duration-200 group">
+          <span class="text-blue-400 text-2xl group-hover:scale-110 transition-transform">📧</span>
+          <span>info@grihasree.com</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="rounded-xl overflow-hidden shadow-lg border border-slate-700 h-72 md:h-80 w-full mt-6 md:mt-0">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.287725667423!2d76.35474169493015!3d9.90997729302391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0873f49b9acebd%3A0x8783cc13a1c5ca6e!2sDr.%20Priyadarsini!5e0!3m2!1sen!2sin!4v1747334444169!5m2!1sen!2sin"
+        class="w-full h-full"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Grihasree Location on Google Maps">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="mt-16 text-center text-slate-400 text-sm border-t border-slate-700 pt-8">
+    © <span id="current-year">2025</span> Grihasree. All rights reserved. Designed with care.
+  </div>
+</footer>
+
+{# Your existing script for menu, navbar scroll, dynamic year #}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    const navLinksMobile = mobileMenu.querySelectorAll('a');
+
+    if (menuBtn && mobileMenu && menuIconOpen && menuIconClose) {
+        menuBtn.addEventListener('click', () => {
+            const isNowHidden = mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden', !isNowHidden);
+            menuIconClose.classList.toggle('hidden', isNowHidden);
+            menuBtn.setAttribute('aria-expanded', !isNowHidden ? 'true' : 'false');
+        });
+
+        if (navLinksMobile) {
+            navLinksMobile.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    }
+
+    // Navbar background on scroll
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        const changeNavbarBackground = () => {
+            if (window.scrollY > 50) { // Adjust scroll threshold if needed
+                navbar.classList.add('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                if (!navbar.classList.contains('bg-transparent')) {
+                    navbar.classList.add('bg-transparent');
+                }
+            }
+        };
+        changeNavbarBackground(); // Initial check
+        window.addEventListener('scroll', changeNavbarBackground);
+    }
+
+    // Dynamic Year for Footer
+    const currentYearSpan = document.getElementById('current-year');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
+
+{# ADD THESE SCRIPTS FOR DJANGO-SMART-SELECTS - place them before the closing </body> tag #}
+{# Ensure jQuery is loaded before smart-selects scripts if not already globally available #}
+{# The jQuery included in the <head> should suffice #}
+<script type="text/javascript" src="{% static 'smart-selects/admin/js/chainedfk.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart-selects/admin/js/bindfields.js' %}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('JS loaded!'); // Debugging
+
+    // The correct IDs for your fields
+    const combos = [
+        {district: 'desktop-district', location: 'desktop-location'},
+        {district: 'mobile-district', location: 'mobile-location'}
+    ];
+
+    combos.forEach(function(pair) {
+        var districtSelect = document.getElementById(pair.district);
+        var locationSelect = document.getElementById(pair.location);
+
+        // Debug the presence of fields
+        if (districtSelect && locationSelect) {
+            console.log('Found district:', pair.district, 'and location:', pair.location);
+
+            districtSelect.addEventListener('change', function() {
+                var districtId = this.value;
+                console.log('District changed for:', pair.district, 'Value:', districtId);
+
+                locationSelect.innerHTML = '<option value="">Loading...</option>';
+                locationSelect.disabled = true;
+
+                if (districtId) {
+                    console.log('Fetching locations for district:', districtId);
+                    fetch(`/ajax/load-locations/?district_id=${districtId}`)
+                    .then(response => {
+                        console.log('Got response from AJAX!');
+                        return response.json();
+                    })
+                    .then(data => {
+                        locationSelect.innerHTML = '<option value="">Select Local Area</option>';
+                        data.locations.forEach(function(loc) {
+                            var opt = document.createElement('option');
+                            opt.value = loc.id;
+                            opt.textContent = loc.name;
+                            locationSelect.appendChild(opt);
+                        });
+                        locationSelect.disabled = false;
+                        console.log('Locations updated');
+                    })
+                    .catch(err => console.error('Fetch error:', err));
+                } else {
+                    locationSelect.innerHTML = '<option value="">Select Local Area</option>';
+                    locationSelect.disabled = true;
+                }
+            });
+        } else {
+            // If any field missing, debug it
+            if (!districtSelect) console.warn('Missing district:', pair.district);
+            if (!locationSelect) console.warn('Missing location:', pair.location);
+        }
+    });
+});
+
+// --- ENABLE location select on page load if district & location have values ---
+document.addEventListener('DOMContentLoaded', function () {
+    // For desktop form
+    var districtSelect = document.getElementById('desktop-district');
+    var locationSelect = document.getElementById('desktop-location');
+    if (
+        districtSelect && locationSelect &&
+        districtSelect.value && locationSelect.value
+    ) {
+        locationSelect.removeAttribute('disabled');
+    }
+
+    // For mobile form
+    var districtMobile = document.getElementById('mobile-district');
+    var locationMobile = document.getElementById('mobile-location');
+    if (
+        districtMobile && locationMobile &&
+        districtMobile.value && locationMobile.value
+    ) {
+        locationMobile.removeAttribute('disabled');
+    }
+});
+
+
+</script>
+  
+
+
+
+<script>
+ 
+  // Function to change navbar background based on scroll position
+const changeNavbarBackground = () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('bg-slate-900/70', 'backdrop-blur-lg', 'shadow-lg');
+        navbar.classList.remove('bg-transparent');
+    } else {
+        navbar.classList.remove('bg-slate-900/70', 'backdrop-blur-lg', 'shadow-lg');
+        if (!navbar.classList.contains('bg-transparent')) {
+            navbar.classList.add('bg-transparent');
+        }
+    }
+};
+
+
+</body>
+</html>

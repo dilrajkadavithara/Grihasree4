@@ -1,0 +1,22 @@
+{% extends "services/base_dashboard.html" %}
+
+{% block title %}{{ action }} Location{% endblock %}
+
+{% block content %}
+<div class="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow-md mt-6">
+  <h2 class="text-2xl font-semibold mb-4 text-gray-700">{{ action }} Location</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="space-y-4">
+      {{ form.as_p }}
+    </div>
+    <div class="mt-6">
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+        {{ action }}
+      </button>
+      <a href="{% url 'locations_view' %}" class="ml-4 text-blue-600 hover:underline">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

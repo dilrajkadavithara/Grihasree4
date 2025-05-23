@@ -1,0 +1,31 @@
+{% extends "services/base_dashboard.html" %}
+
+{% block title %}Grihasree Dashboard – RM{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6">Welcome, Regional Manager</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">Lead Insights</h3>
+        <p class="text-sm text-gray-600 mb-4">
+            Monitor service requests submitted by users in your region.
+        </p>
+        <a href="{% url 'leads_view' %}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            View Leads
+        </a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold mb-2">Vendor Management</h3>
+        <p class="text-sm text-gray-600 mb-4">
+            View and manage the list of service providers.
+        </p>
+        <a href="{% url 'vendors_view' %}" class="inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">
+            View Vendors
+        </a>
+    </div>
+
+</div>
+{% endblock %}

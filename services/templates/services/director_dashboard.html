@@ -1,0 +1,51 @@
+{% extends 'services/base_dashboard.html' %}
+
+{% block title %}Director Dashboard{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <!-- Leads Card -->
+  <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+    <h2 class="text-xl font-semibold text-blue-600 mb-2">Manage Leads</h2>
+    <p class="text-gray-600 mb-4">View, edit, or delete customer service requests.</p>
+    <a href="{% url 'leads_view' %}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Go to Leads</a>
+  </div>
+
+  <!-- Vendors Card -->
+  <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+    <h2 class="text-xl font-semibold text-green-600 mb-2">Manage Vendors</h2>
+    <p class="text-gray-600 mb-4">Add or manage vendors in your service areas.</p>
+    <a href="{% url 'vendors_view' %}" class="inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Go to Vendors</a>
+  </div>
+
+  <!-- Locations Card -->
+  <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+    <h2 class="text-xl font-semibold text-yellow-600 mb-2">Manage Locations</h2>
+    <p class="text-gray-600 mb-4">Update service locations under each district.</p>
+    <a href="{% url 'locations_view' %}" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Go to Locations</a>
+  </div>
+
+  <!-- Districts Card -->
+  <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+    <h2 class="text-xl font-semibold text-purple-600 mb-2">Manage Districts</h2>
+    <p class="text-gray-600 mb-4">Add or edit available districts in the system.</p>
+    <a href="{% url 'districts_view' %}" class="inline-block bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Go to Districts</a>
+  </div>
+
+  <!-- Services Card -->
+  <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+    <h2 class="text-xl font-semibold text-pink-600 mb-2">Manage Services</h2>
+    <p class="text-gray-600 mb-4">Edit and update plumbing and electrical services.</p>
+    <a href="{% url 'services_view' %}" class="inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">Go to Services</a>
+  </div>
+
+  <!-- Pending Users (Optional) -->
+  <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+    <h2 class="text-xl font-semibold text-indigo-600 mb-2">Pending Users</h2>
+    <p class="text-gray-600 mb-4">View users awaiting account approval.</p>
+    <a href="{% url 'pending_users' %}" class="inline-block bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600">Approve Users</a>
+  </div>
+
+</div>
+{% endblock %}

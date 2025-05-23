@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ action }} Lead – Grihasree</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="{% static 'services/images/favicon.ico' %}" type="image/x-icon" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-xl mx-auto mt-10 bg-white p-6 rounded-lg shadow">
+    <h1 class="text-2xl font-bold mb-6">{{ action }} Lead</h1>
+
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      
+      {% for field in form %}
+        <div>
+          <label for="{{ field.id_for_label }}" class="block font-medium mb-1">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <p class="text-red-600 text-sm">{{ field.errors.0 }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <div class="flex justify-between mt-6">
+        <a href="{% url 'leads_view' %}" class="text-blue-600 hover:underline text-sm">← Back to Leads</a>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          {{ action }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

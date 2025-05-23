@@ -1,0 +1,47 @@
+# Environment
+.env
+*.env
+
+# Python cache files
+*.pyc
+*.pyo
+__pycache__/
+
+# Django database files
+*.sqlite3
+db.sqlite3
+
+# Django static and media (only for deployment)
+staticfiles/
+media/
+
+# Virtual environment
+env/
+venv/
+ENV/
+
+# IDE settings (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Log files
+*.log
+
+# Test coverage / debug files
+.coverage
+.cache
+pytest_cache/
+htmlcov/
+
+# Node modules (if frontend has Node dependencies)
+node_modules/
+
+# Pipenv
+Pipfile.lock
+Pipfile

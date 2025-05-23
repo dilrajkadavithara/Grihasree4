@@ -1,0 +1,25 @@
+<!-- Base template each dashboard will extend -->
+<!-- templates/services/base_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-white shadow p-4 mb-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-semibold">Grihasree Dashboard</h1>
+            <form method="post" action="{% url 'logout' %}" class="inline">
+                {% csrf_token %}
+                <button type="submit" class="text-red-600">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

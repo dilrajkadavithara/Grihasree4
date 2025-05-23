@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assign Role – Grihasree</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">Assign Role to {{ user.username }}</h1>
+
+    <form method="post">
+      {% csrf_token %}
+      <label for="group" class="block mb-2 font-medium">Select Role</label>
+      <select name="group" id="group" class="block w-full rounded border-gray-300 shadow-sm focus:ring-blue-500">
+        {% for group in groups %}
+        <option value="{{ group.id }}">{{ group.name }}</option>
+        {% endfor %}
+      </select>
+
+      <div class="mt-6 flex justify-between">
+        <a href="{% url 'pending_users' %}" class="text-sm text-gray-500 hover:underline">← Back</a>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Assign</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

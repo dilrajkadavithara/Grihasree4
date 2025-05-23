@@ -1,0 +1,27 @@
+
+    /* Custom CSS - consider moving to custom.css later */
+    .text-shadow-custom {
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Slightly softer shadow */
+    }
+    .text-shadow-custom-light {
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Slightly softer shadow */
+    }
+
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Consider adding a subtle active state for nav links via JS if needed */
+    /* .nav-link-active { color: #your-active-color; font-weight: bold; } */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.form-box {
+  box-shadow: 0 12px 36px 0 rgba(50,50,93,0.14), 0 1.5px 6px 0 rgba(0,0,0,0.07);
+}
