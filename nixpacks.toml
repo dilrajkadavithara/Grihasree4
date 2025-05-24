@@ -1,0 +1,5 @@
+[phases.setup]
+nixPkgs = ['mysql', 'pkg-config', 'libmysqlclient', 'openssl', 'python311Packages.mysqlclient']
+
+[phases.build]
+cmds = ["pip install -r requirements.txt"]
