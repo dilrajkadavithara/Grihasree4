@@ -10,7 +10,7 @@ WORKDIR /app
 
 # Install system dependencies (for mysqlclient, Pillow, etc.)
 RUN apt-get update && \
-    apt-get install -y gcc default-libmysqlclient-dev && \
+    apt-get install -y gcc pkg-config default-libmysqlclient-dev libjpeg-dev zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip and install Python dependencies
