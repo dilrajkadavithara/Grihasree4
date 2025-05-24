@@ -1,0 +1,1 @@
+web: gunicorn grihasree_project.wsgi
