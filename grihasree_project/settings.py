@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'services', 
     'smart_selects',
     'widget_tweaks',# Your app name here
+    'django_mysql',
 ]
 
 MIDDLEWARE = [
@@ -97,7 +98,7 @@ WSGI_APPLICATION = 'grihasree_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
