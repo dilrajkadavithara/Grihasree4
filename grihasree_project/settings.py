@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'services', 
     'smart_selects',
     'widget_tweaks',# Your app name here
-    'django_mysql',
 ]
 
 MIDDLEWARE = [
