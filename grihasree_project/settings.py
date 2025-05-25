@@ -165,3 +165,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+print("DJANGO_DEBUG from os.environ =", os.environ.get('DJANGO_DEBUG'))
+print("DEBUG in settings.py =", DEBUG)
+
