@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import os
 print("DATABASE_URL =", os.environ.get("DATABASE_URL"))
+print("DATABASE_URL (from os.environ) =", os.environ.get('DATABASE_URL'))
+
 from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
