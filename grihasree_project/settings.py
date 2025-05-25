@@ -99,7 +99,11 @@ WSGI_APPLICATION = 'grihasree_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=False)
+    'default': dj_database_url.config(
+        default='mysql://root:YOUR_PASSWORD@mysql.railway.internal:3306/railway',  # fallback for local dev only
+        conn_max_age=600,
+        ssl_require=False
+    )
 }
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
