@@ -98,6 +98,7 @@ WSGI_APPLICATION = 'grihasree_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+print("DATABASE_URL in environment:", os.environ.get("DATABASE_URL"))
 DATABASES = {
     'default': dj_database_url.config(
         conn_max_age=600,
