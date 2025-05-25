@@ -28,6 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'True'
 
 ALLOWED_HOSTS = [
+    "web-production-28b26.up.railway.app",
     'grihasree.com',      # Your production domain
     'www.grihasree.com',  # Optional: with www
     '127.0.0.1',          # For local
