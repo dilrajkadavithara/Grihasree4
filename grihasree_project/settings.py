@@ -13,10 +13,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR, '.env'))  # Loads your .env file
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -29,13 +29,11 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'True'
 
 ALLOWED_HOSTS = [
     "web-production-28b26.up.railway.app",
-    'grihasree.com',      # Your production domain
-    'www.grihasree.com',  # Optional: with www
-    '127.0.0.1',          # For local
-    'localhost',          # For local
+    'grihasree.com',
+    'www.grihasree.com',
+    '127.0.0.1',
+    'localhost',
 ]
-
-
 
 # Application definition
 
@@ -46,9 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'services', 
+    'services',
     'smart_selects',
-    'widget_tweaks',# Your app name here
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -60,16 +58,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
+
+# --------- DEBUG SETTINGS FOR RAILWAY INFINITE REDIRECT ---------
+# Disable SSL/cookie settings to fix redirect issue during deployment debug.
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# ---------------------------------------------------------------
 
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-SECURE_SSL_REDIRECT = True
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
 X_FRAME_OPTIONS = 'DENY'
 
@@ -92,7 +93,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'grihasree_project.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -126,7 +126,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -138,26 +137,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
+STATIC_URL = '/static/'
 
-STATIC_URL = '/static/' # This is the URL prefix for static files
-
-# Directories where Django will look for static files in addition to each app's 'static' directory
 STATICFILES_DIRS = [
-    BASE_DIR / 'static', # For project-wide static files
+    BASE_DIR / 'static',
 ]
 
-# The absolute path to the directory where collectstatic will collect static files for deployment.
-# This directory should be empty before running collectstatic and is NOT for development.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -168,6 +157,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-SECURE_SSL_REDIRECT = True
-# Trust X-Forwarded-Proto header set by Railway's proxy
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
