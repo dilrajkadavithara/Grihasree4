@@ -15,6 +15,9 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 
+print("DATABASE_URL =", os.environ.get("DATABASE_URL"))
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR, '.env'))  # Loads your .env file
