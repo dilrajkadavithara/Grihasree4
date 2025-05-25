@@ -10,12 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path
+
 import os
+print("DATABASE_URL =", os.environ.get("DATABASE_URL"))
+from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
 
-print("DATABASE_URL =", os.environ.get("DATABASE_URL"))
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
