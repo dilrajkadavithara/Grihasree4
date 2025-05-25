@@ -42,6 +42,8 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+print("ALLOWED_HOSTS at runtime:", ALLOWED_HOSTS)
+
 # Application definition
 
 INSTALLED_APPS = [
