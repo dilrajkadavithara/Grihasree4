@@ -35,6 +35,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') == 'True'
 
 ALLOWED_HOSTS = [
     "web-production-28b26.up.railway.app",
+    "web-production-03d53.up.railway.app",    # ← Add this line
     'grihasree.com',
     'www.grihasree.com',
     '127.0.0.1',
