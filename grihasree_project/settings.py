@@ -43,6 +43,7 @@ ALLOWED_HOSTS = [
 ]
 
 print("ALLOWED_HOSTS at runtime:", ALLOWED_HOSTS)
+print("DATABASE_URL in environment:", os.environ.get("DATABASE_URL"))
 
 # Application definition
 
